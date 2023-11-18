@@ -1,5 +1,5 @@
 import React from "react";
-import { GoogleMap, GoogleMapProps, MarkerF, MarkerProps, useLoadScript } from "@react-google-maps/api";
+import { GoogleMap, MarkerF, MarkerProps, useLoadScript } from "@react-google-maps/api";
 import "./../../App.css";
 import { GoogleMapsApiKey, GoogleMapsLibraries, MapCenterGeoCordinates, MapZoomLevel } from "../../models/appConstants";
 import { MapoMapProps } from "../../models/propTypes";
