@@ -13,7 +13,7 @@ import { geocodeByAddress, getLatLng } from "react-google-places-autocomplete";
 import { GeoCordinates } from "../../models/stateTypes";
 
 const MapView: React.FC<MapViewProps> = (props) => {
-  const { leftGridSize, rightGridSize, center, zoom } = props;
+  const { mapGridSize, placesGridSize, center, zoom } = props;
 
   const [markerPosition, setMarkerPosition] = React.useState<GeoCordinates>(center ? center : MapCenterGeoCordinates);
 
@@ -25,14 +25,14 @@ const MapView: React.FC<MapViewProps> = (props) => {
 
   return (
     <Grid container>
-      <Grid item xs={leftGridSize ? leftGridSize : MapViewLeftContent}>
+      <Grid item xs={mapGridSize ? mapGridSize : MapViewLeftContent}>
         <MapoMap
           center={markerPosition}
           zoom={zoom ? zoom : MapZoomLevel}
           markers={[{ position: markerPosition }]}
         ></MapoMap>
       </Grid>
-      <Grid item xs={rightGridSize ? rightGridSize : MapViewRightContent}>
+      <Grid item xs={placesGridSize ? placesGridSize : MapViewRightContent}>
         <PlacesView
           searchTitle={"Seach for place"}
           listTitle={"Places list"}

@@ -8,8 +8,8 @@ export interface MapoAutoCompleteProps {
 }
 
 export interface MapViewProps extends GoogleMapProps {
-  leftGridSize?: GridSize;
-  rightGridSize?: GridSize;
+  mapGridSize?: GridSize;
+  placesGridSize?: GridSize;
   center?: GeoCordinates;
   zoom?: number;
 }

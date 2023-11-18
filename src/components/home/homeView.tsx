@@ -11,8 +11,8 @@ const HomeView: React.FC = () => {
     <MapView
       center={MapCenterGeoCordinates}
       zoom={MapZoomLevel}
-      leftGridSize={MapViewLeftContent}
-      rightGridSize={MapViewRightContent}
+      mapGridSize={MapViewLeftContent}
+      placesGridSize={MapViewRightContent}
     />
   );
 };
