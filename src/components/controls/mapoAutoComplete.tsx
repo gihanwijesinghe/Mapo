@@ -1,23 +1,20 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
+import { MapoAutoCompleteProps } from "../../models/propTypes";
+import { GoogleMapsApiKey, GooglePlaceAutoCompleteDebounce } from "../../models/appConstants";
 
-export interface MyAutoCompleteProps {
-  onAddressSelect: (address: string) => void;
-}
-const MyAutoComplete: React.FC<MyAutoCompleteProps> = (props) => {
-  const handleAddress = (description: any) => {
-    props.onAddressSelect(description.description);
-  };
+const MapoAutoComplete: React.FC<MapoAutoCompleteProps> = (props) => {
+  const { lable, onItemSelect } = props;
 
   return (
     <Grid container>
-      <Grid item>Seach for place</Grid>
+      <Grid item>{lable}</Grid>
       <Grid item>
         <GooglePlacesAutocomplete
-          debounce={800}
-          apiKey="AIzaSyCXd1VuMwPQbNyTFRBpp-JPgWhikTYyjko"
-          onSelect={handleAddress}
+          debounce={GooglePlaceAutoCompleteDebounce}
+          apiKey={GoogleMapsApiKey}
+          onSelect={onItemSelect}
           renderSuggestions={(
             active: number,
             suggestions: any[],
@@ -37,4 +34,4 @@ const MyAutoComplete: React.FC<MyAutoCompleteProps> = (props) => {
   );
 };
 
-export default MyAutoComplete;
+export default MapoAutoComplete;
